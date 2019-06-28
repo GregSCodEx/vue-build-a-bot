@@ -33,6 +33,9 @@ body {
   background: linear-gradient(to bottom, #555555, #999999);
   background-attachment: fixed;
 }
+</style>
+
+<style scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }

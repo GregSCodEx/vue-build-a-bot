@@ -2,7 +2,7 @@
   <div class="content">
     <button class="add-to-cart" @click="addToCart()"> Add to Cart</button>
   <div class="top-row">
-    <div class="top part">
+    <div class="top part" :class="{'sale-border': selectedRobot.head.onSale}">
       <div class="robot-name">
         {{selectedRobot.head.title}}
         <spam v-if="selectedRobot.head.onSale" class="sale">Sale!</spam>
@@ -166,7 +166,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .part {
   position: relative;
   width:165px;
@@ -281,5 +281,8 @@ td, th {
 }
 .cost {
   text-align: right;
+}
+.sale-border {
+  border: 3px solid #ff0000;
 }
 </style>

@@ -6,15 +6,15 @@
       {{selectedRobot.head.title}}
       <spam v-if="selectedRobot.head.onSale" class="sale">Sale!</spam>
     </div> -->
-    <PartSelector :parts="availableParts.heads" position="top" />
+    <PartSelector :parts="availableParts.heads" position="top" partsTitle="Head" />
   </div>
   <div class="middle-row">
-    <PartSelector :parts="availableParts.arms" position="left" />
-    <PartSelector :parts="availableParts.torsos" position="center" />
-    <PartSelector :parts="availableParts.arms" position="right" />
+    <PartSelector :parts="availableParts.arms" position="left" partsTitle="Left Arm" />
+    <PartSelector :parts="availableParts.torsos" position="center" partsTitle="Torso" />
+    <PartSelector :parts="availableParts.arms" position="right" partsTitle="Right Arm" />
   </div>
   <div class="bottom-row">
-    <PartSelector :parts="availableParts.bases" position="bottom" />
+    <PartSelector :parts="availableParts.bases" position="bottom" partsTitle="Base" />
   </div>
   <div>
     <h1>Cart</h1>

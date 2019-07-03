@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+    Root Foo: {{rootFoo}} <br />
+    Robot Foo: {{robotFoo}} <br />
+    User Foo: {{userFoo}} <br />
+    <br />
+    Root Getter Foo: {{rootGetterFoo}} <br />
+    Robot Getter Foo: {{robotGetterFoo}} <br />
+    User Getter Foo: {{userGetterFoo}} <br />
     <header>
       <nav>
         <ul>
@@ -43,6 +50,24 @@ export default {
   computed: {
     cart() {
       return this.$store.state.robots.cart;
+    },
+    rootFoo() {
+      return this.$store.state.foo;
+    },
+    robotFoo() {
+      return this.$store.state.robots.foo;
+    },
+    userFoo() {
+      return this.$store.state.users.foo;
+    },
+    rootGetterFoo() {
+      return this.$store.getters.foo;
+    },
+    robotGetterFoo() {
+      return this.$store.getters['robots/foo'];
+    },
+    userGetterFoo() {
+      return this.$store.getters['users/foo'];
     },
   },
 };

@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'app',
@@ -51,21 +52,13 @@ export default {
     cart() {
       return this.$store.state.robots.cart;
     },
-    rootFoo() {
-      return this.$store.state.foo;
-    },
-    robotFoo() {
-      return this.$store.state.robots.foo;
-    },
-    userFoo() {
-      return this.$store.state.users.foo;
-    },
-    rootGetterFoo() {
-      return this.$store.getters.foo;
-    },
-    robotGetterFoo() {
-      return this.$store.getters['robots/foo'];
-    },
+    ...mapState({
+      rootFoo: 'foo',
+      userFoo: state => state.users.foo,
+    }),
+    ...mapState('robots', { robotFoo: 'foo' }),
+    ...mapGetters({ rootGetterFoo: 'foo' }),
+    ...mapGetters('robots', { robotGetterFoo: 'foo' }),
     userGetterFoo() {
       return this.$store.getters['users/foo'];
     },
